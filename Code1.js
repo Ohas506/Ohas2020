@@ -4,7 +4,7 @@ document.head.appendChild(styling);
 campaignTrail_temp.credits = "<button onclick='funcredits()'>Mod1Team</button>";
 
   funcredits = function() {
-    credits = ["Lead Writer, Graphics, Music:", "Jaeckex", "", "Coding, Additional Writing:",  "Nina", "", "Banner by Calgar and Jaeckex", "", "Playtesting:", "Rickroll999, rnmgaming5068, TPLeo, Tomahawk2k, Leon Trotsky, Pompf, Ivorycore, Anne H, Jackalopemaster, EUIV ETS2", "","#1 Achievement Hunter", "Onkel Danny", "", "Music Player adapted from 2000N", "Advisor Mode inspired by Sea to Shining Sea", ""]
+    credits = ["Lead Writer, Graphics, Music:", "Ohas", "", "Coding, Additional Writing:",  "Ohas", "", "Ohas", "", "Playtesting:", "Rickroll999, rnmgaming5068, TPLeo, Tomahawk2k, Leon Trotsky, Pompf, Ivorycore, Anne H, Jackalopemaster, EUIV ETS2", "","#1 Achievement Hunter", "Onkel Danny", "", "Music Player adapted from 2000N", "Advisor Mode inspired by Sea to Shining Sea", ""]
     text = "CREDITS:\n\n"
     for (i in credits) {
         text += credits[i] + "\n"
@@ -22,7 +22,7 @@ styling.innerHTML = `
 #opponent_selection_id_back {
     display: none;
 }`
-quotes = ["“Every soldier thinks something of the moral aspects of what he is doing. But all war is immoral and if you let that bother you, you're not a good soldier.” ~ Curtis Emerson Lemay", "“I'll tell you what war is about, you've got to kill people, and when you've killed enough they stop fighting.” ~  Curtis Emerson Lemay"]
+quotes = ["““The people must be brought into the operation of government, to make the laws that affect their lives, and thereby become the fourth check in our government’s system of checks and balances.” -- Mike Gravel", ]
 customquote = quotes[Math.floor((Math.random() * quotes.length))]
 
 corrr=`\n<h2>1972 OFTL</h2><font id='wittyquote' size='2' color='white'><i><em>`+customquote+`</em></i></font>`
@@ -45,7 +45,7 @@ e.election_json = [
 		"pk": 9,
 		"fields": {
 			"year": 1972,
-			"summary": "<p> The Nation is on fire.Three years after Johnson and Nixon’s brazen criminality ignited the spark for America’s vilest demagogue to secure victory, and two years after taxes torched away his power, President LeMay stands atop the ashes and the gunpowder, waiting for that final spark to explode in cathartic fashion. President LeMay is faced with fighting two civil wars-one on the streets of Hue and another on the streets of New York.<br><br> Behold our “Great Society”, a nation whose citizens disdain their government, where a general goes to battle against a congress itching to impeach him on the slightest whiff of impropriety, hoping in vain to install one of their own to put out this eternal flame ravaging this frail union. Where rage and fiery anger are the norm, and where common decency is an uncommon virtue.<br><br> Nobody has faith in President LeMay, because faith has died, charred completely by the flamethrowers of weaker men. This land, once of dreamers, now is gripped in an all-American nightmare. Yet, amidst the flame and fury, one man still believes, still dreams he can fly, fly high above the chaos and carnage; and heal this nation.</p>",
+			"summary": "<p> Four years after the election of bussiness mogel Donald Trump, the nation is faced with the usual referedum on the office of the presidency. But this time its different, yes this time the orthodox has become unorthodx as the Covid 19 pandemic continues to rage across the world, mass protets engluf the nations cities over the brazen killing of George Flyod, and to top it all of an economic disaster. </p>",
 			"image_url": "https://i.imgur.com/sPbFKjZ.png",
 			"winning_electoral_vote_number": 270,
 			"advisor_url": "https://images-ext-2.discordapp.net/external/SpVmnQiYu2w4Tmn55DDAkR7o9fylOcKSGXTPoKgC3Mk/https/files.catbox.moe/wmdtme.png?width=1732&height=1066",
