@@ -42,7 +42,7 @@ e=campaignTrail_temp
 e.election_json = [
 	{
 		"model": "campaign_trail.election",
-		"pk": 9,
+		"pk": 20,
 		"fields": {
 			"year": 2020,
 			"summary": "<p> Four years after the election of bussiness mogel Donald Trump, the nation is faced with the usual referedum on the office of the presidency. But this time its different, yes this time the orthodox has become unorthodx as the Covid 19 pandemic continues to rage across the world, mass protests engluf the nations cities over the brazen killing of George Floyd, and to top it all of an economic disaster continues to rage.<br><br>Add to that the numerous scandels that have englufed the Trump presidency, and you have a recipe for a country thats more polerized that it has ever been before. It seams that the whole world has come to a standstill, as the Covid 19 Pademic continues to take the lives of more and more people both at home, and abroad. Now more than ever, people are looking to their politicians for awnsers, time will tell if they have them.</p>",
@@ -59,7 +59,7 @@ e.election_json = [
 e.candidate_json = [
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 200,
+		"pk": 300,
 		"fields": {
 			"first_name": "Bob",
 			"last_name": "Iger",
@@ -81,7 +81,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 201,
+		"pk": 301,
 		"fields": {
 			"first_name": "Donald",
 			"last_name": "Trump",
@@ -103,7 +103,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 202,
+		"pk": 302,
 		"fields": {
 			"first_name": "Jesse",
 			"last_name": "Ventura",
@@ -125,7 +125,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 203,
+		"pk": 303,
 		"fields": {
 			"first_name": "John",
 			"last_name": "Mc Afee",
