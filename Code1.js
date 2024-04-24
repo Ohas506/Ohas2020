@@ -59,7 +59,7 @@ e.election_json = [
 e.candidate_json = [
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 77,
+		"pk": 300,
 		"fields": {
 			"first_name": "Bob",
 			"last_name": "Iger",
@@ -81,7 +81,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 78,
+		"pk": 301,
 		"fields": {
 			"first_name": "Donald",
 			"last_name": "Trump",
@@ -103,7 +103,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 79,
+		"pk": 302,
 		"fields": {
 			"first_name": "Jesse",
 			"last_name": "Ventura",
@@ -125,7 +125,7 @@ e.candidate_json = [
 	},
 	{
 		"model": "campaign_trail.candidate",
-		"pk": 80,
+		"pk": 303,
 		"fields": {
 			"first_name": "John",
 			"last_name": "Mc Afee",
