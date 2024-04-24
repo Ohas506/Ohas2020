@@ -42,7 +42,7 @@ e=campaignTrail_temp
 e.election_json = [
 	{
 		"model": "campaign_trail.election",
-		"pk": 20,
+		"pk": 21,
 		"fields": {
 			"year": 2020,
 			"summary": "<p> Four years after the election of bussiness mogel Donald Trump, the nation is faced with the usual referedum on the office of the presidency. But this time its different, yes this time the orthodox has become unorthodx as the Covid 19 pandemic continues to rage across the world, mass protests engluf the nations cities over the brazen killing of George Floyd, and to top it all of an economic disaster continues to rage.<br><br>Add to that the numerous scandels that have englufed the Trump presidency, and you have a recipe for a country thats more polerized that it has ever been before. It seams that the whole world has come to a standstill, as the Covid 19 Pademic continues to take the lives of more and more people both at home, and abroad. Now more than ever, people are looking to their politicians for awnsers, time will tell if they have them.</p>",
@@ -63,7 +63,7 @@ e.candidate_json = [
 		"fields": {
 			"first_name": "Bob",
 			"last_name": "Iger",
-			"election": 9,
+			"election": 21,
 			"party": "Democratic Party",
 			"state": "New York",
 			"priority": 1,
@@ -85,7 +85,7 @@ e.candidate_json = [
 		"fields": {
 			"first_name": "Donald",
 			"last_name": "Trump",
-			"election": 9,
+			"election": 21,
 			"party": "Republican",
 			"state": "New York",
 			"priority": 2,
@@ -107,7 +107,7 @@ e.candidate_json = [
 		"fields": {
 			"first_name": "Jesse",
 			"last_name": "Ventura",
-			"election": 9,
+			"election": 21,
 			"party": "Green",
 			"state": "New York",
 			"priority": 3,
@@ -129,7 +129,7 @@ e.candidate_json = [
 		"fields": {
 			"first_name": "John",
 			"last_name": "Mc Afee",
-			"election": 9,
+			"election": 21,
 			"party": "Libertarian",
 			"state": "Virginia",
 			"priority": 4,
@@ -445,7 +445,7 @@ e.global_parameter_json = [
 ]
 
 e.candidate_dropout_json = [{"model": "campaign_trail.candidate_dropout", "pk": 1, "fields": {"candidate": 36, "affected_candidate": 18, "probability": 1.0}}]
-e.temp_election_list = [{"id": 9, "year": 1972, "is_premium": 0, "display_year": "2020"}];
+e.temp_election_list = [{"id": 21, "year": 1972, "is_premium": 0, "display_year": "2020"}];
 e.show_premium = true;
 e.premier_ab_test_version = -1;
 
