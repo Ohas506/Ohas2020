@@ -10,15 +10,15 @@ campaignTrail_temp.credits = "<button onclick='funcredits()'>Ohas</button>";
     }
     alert(text)
   }
-  
+  let z = new MutationObserver((mutationsList, observer) => {
+    let runningMateSummary = document.querySelector("#running_mate_summary");
+    if (runningMateSummary) {
+        $("#running_mate_id_button").click();
+        observer.disconnect()
+    }
+  });
 e = campaignTrail_temp;
-let z = new MutationObserver((mutationsList, observer) => {
-  let runningMateSummary = document.querySelector("#running_mate_summary");
-  if (runningMateSummary) {
-      $("#running_mate_id_button").click();
-      observer.disconnect()
-  }
-});
+
 
             nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#a6a0a0";
             styling.innerHTML = `
