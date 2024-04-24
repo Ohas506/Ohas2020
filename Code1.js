@@ -67,7 +67,7 @@ e.candidate_json = [
 			"party": "Democratic Party",
 			"state": "New York",
 			"priority": 1,
-			"description": "In a upset not even the best of pundits could preict, Bob Iger former CEO of Walt Disney, has won the Democratic Primaries, and is set to be the parties nominee for president. At the advice of Oprah Winfey, Iger decided to seek the nomination, running a center left campaign, gaining notable endorsments from Joe Biden among others. Iger is the first major party presidential canidate to be Jewish, something that will no doubt draw scron from some and support from others. Disneys checkered past with unuions and workers rights have continued to haunt Iger throughout the primairies, and will continue to be a sore spot to a large part of the party. Others however are hopeful, hopeful that Iger can channel some of his Disney Magic to secure victory this November.",
+			"description": "In a upset not even the best of pundits could predict, Bob Iger former CEO of Walt Disney, has won the Democratic Primaries, and is set to be the parties nominee for president. At the advice of Oprah Winfey, Iger decided to seek the nomination, running a center left campaign, gaining notable endorsments from Joe Biden among others. Iger is the first major party presidential canidate to be Jewish, something that will no doubt draw scron from some and support from others. Disneys checkered past with unuions and workers rights have continued to haunt Iger throughout the primairies, and will continue to be a sore spot to a large part of the party. Others however are hopeful, hopeful that Iger can channel some of his Disney Magic to secure victory this November.",
 			"color_hex": "#0000ff",
 			"secondary_color_hex": "#FFA0A0",
 			"is_active": 1,
