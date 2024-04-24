@@ -67,7 +67,7 @@ e.candidate_json = [
 			"party": "Democratic Party",
 			"state": "New York",
 			"priority": 1,
-			"description": "<i>The riskiest thing we can do is just maintain the status quo.-Bob Iger</i><br><br>In a surprise upset that not even the best of pundits could predict, Bob Iger, former CEO of Disney, is now the Democratic Party's presumptive nominee for president. Running a center left campaign, his success has been attributed to key endorsements from Joe Biden among others. On the flip side, Iger has attracted criticism from senators Warren and Sanders, for the poor working conditions that many at Disney, and the thought of nominating someone from the “1%”, has disillusioned many within the party, some even have gone as far as to compare Iger to Trump. Iger will have to balance touting his leadership credentials at Disney, with placating the Progressive wing of the party.",
+			"description": "<i>The riskiest thing we can do is just maintain the status quo.-Bob Iger</i><br><br>In a surprise upset that not even the best of pundits could predict, Bob Iger, former CEO of Disney, is now the Democratic Party's presumptive nominee for president. Running a center left campaign, his success has been attributed to key endorsements from Joe Biden among others. On the flip side, Iger has attracted criticism from senators Warren and Sanders, for the poor working conditions that many at Disney suffer under, and the thought of nominating someone from the “1%”, has disillusioned many within the party, some even have gone as far as to compare Iger to Trump. Iger will have to balance touting his leadership credentials at Disney, with placating the Progressive wing of the party.",
 			"color_hex": "#0000ff",
 			"secondary_color_hex": "#FFA0A0",
 			"is_active": 1,
@@ -445,7 +445,7 @@ e.global_parameter_json = [
 ]
 
 e.candidate_dropout_json = [{"model": "campaign_trail.candidate_dropout", "pk": 1, "fields": {"candidate": 36, "affected_candidate": 18, "probability": 1.0}}]
-e.temp_election_list = [{"id": 21, "year": 1972, "is_premium": 0, "display_year": "2020"}];
+e.temp_election_list = [{"id": 21, "year": 2020, "is_premium": 0, "display_year": "2020"}];
 e.show_premium = true;
 e.premier_ab_test_version = -1;
 
