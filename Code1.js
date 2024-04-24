@@ -1,4 +1,4 @@
-// 1972 FIRING LINE CODE 1
+// Ohas 2020 CODE 1
 styling = document.createElement("style");
 document.head.appendChild(styling);
 campaignTrail_temp.credits = "<button onclick='funcredits()'>Ohas</button>";
