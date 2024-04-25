@@ -4,7 +4,7 @@ campaignTrail_temp.questions_json = [
         "pk": 1000,
         "fields": {
             "priority": 1,
-            "description": "Your use of Twitter has garnered outsized attention in your run for the Republican nomination, but some advisors are leery of your erratic tendnecies on that site. How will you proceed?",
+            "description": "Question one: Congratulations!, all of the major candidates have either dropped out or stand no chance of challenging you for the DNC’s nomination! Despite this, there is a committed #Never Iger Movement, that continues to rumble, vocally protesting the party nominating  a “member of the 1%”, comparing you to Donald Trump. Going into the Convention, how will you address this?",
             "likelihood": 1
         }
     },
@@ -232,7 +232,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5000,
         "fields": {
             "question": 1000,
-            "description": "These are the same people who said my campaign was hopeless and gave me terrible advice for the last year and a half. Not too smart!"
+            "description": "No comment, it's better to just stay silent.\n"
         }
     },
     {
@@ -240,7 +240,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5001,
         "fields": {
             "question": 1000,
-            "description": "In this day and age you gotta use social media. You gotta. Now I think we can all agree that a general election is different from a primary so I might tone it down a little on some things, but you gotta use social media."
+            "description": "Get me on the phone with Sanders, let's have a conversation about Unity, cause that's what it's gonna take to beat Trump.\n"
         }
     },
     {
@@ -248,7 +248,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5002,
         "fields": {
             "question": 1000,
-            "description": "I'm the best thing that's happened to CNN since the Gulf War. If I stop tweeting for a couple of weeks, they'll run a story about me every hour asking why!"
+            "description": "Before the Convention, il give a speech talking about how people like Sanders and Warren lost us the last election, and how the #Never Iger movement, is actually the #Trump Second Term movement. I'll also add in how we need to be more like “Trump” in order to beat him.\n"
         }
     },
     {
@@ -889,6 +889,14 @@ campaignTrail_temp.answers_json = [
         "fields": {
             "question": 1038,
             "description": "I understand some of the issues with this. Nobody respects women more than I do, but at the same time, I have an absolutely tremendous amount of respect for Mike Pence."
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 20664,
+        "fields": {
+            "question": 1000,
+            "description": "I will give a speech stressing the need for Unity this election season, il mention that Trump has been a disaster for are very democracy, and we must beat him at all costs"
         }
     }
 ]
@@ -6306,9 +6314,9 @@ campaignTrail_temp.answer_score_global_json = [
         "pk": 3000,
         "fields": {
             "answer": 5002,
-            "candidate": 200,
-            "affected_candidate": 200,
-            "global_multiplier": -0.021
+            "candidate": 201,
+            "affected_candidate": 201,
+            "global_multiplier": -3
         }
     },
     {
@@ -7119,16 +7127,6 @@ campaignTrail_temp.answer_score_global_json = [
             "candidate": 200,
             "affected_candidate": 202,
             "global_multiplier": -0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_global",
-        "pk": 3247,
-        "fields": {
-            "answer": 5002,
-            "candidate": 200,
-            "affected_candidate": 202,
-            "global_multiplier": -0.015
         }
     },
     {
@@ -8530,8 +8528,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2500,
         "fields": {
             "answer": 5000,
-            "candidate": 200,
-            "answer_feedback": "More tweets. More pearl clutching from the media. Maybe you know something they don't?"
+            "candidate": 201,
+            "answer_feedback": "The clamors of “Never Iger!” continue, but in the end there's nothing they can do, and come Convention time, you're easily confirmed as the nominee.\n"
         }
     },
     {
@@ -8539,8 +8537,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2501,
         "fields": {
             "answer": 5001,
-            "candidate": 200,
-            "answer_feedback": "A couple of weeks go by, and commentators start murmuring about your \"pivot\" for the general election."
+            "candidate": 201,
+            "answer_feedback": "The conversation with Sanders is……..tense to say the least. Despite this he eventually recognizes the need for Unity this election season, and at the convention gives a speech endorsing you, shoring up the progressive wing of the party.\n"
         }
     },
     {
@@ -8548,8 +8546,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2502,
         "fields": {
             "answer": 5002,
-            "candidate": 200,
-            "answer_feedback": "Your advisors are happier, and the Washington Post even runs a cover story about your inactive Twitter account and the implications."
+            "candidate": 201,
+            "answer_feedback": "This does not go over well, as many within the party are revolted at your dismissal of Warren and Sanders and your embrace of a “New Democratic” movement, one that many people think is simply Republican Lite. Many in the party are also revolted, at what seems to be you praising Trump. Come convention time, Sanders and Warren's delegates stage a walkout, and as the Democratic Party begins to collapse in on itself, the #Never Iger movement is able to gain a majority of delegate count, awarding them to the only candidate still left in the race."
         }
     },
     {
@@ -9208,11 +9206,43 @@ campaignTrail_temp.answer_feedback_json = [
             "candidate": 200,
             "answer_feedback": "The level of Mike Pence's social conservatism is certainly more than most Americans are familiar with."
         }
+    },
+    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 20665,
+        "fields": {
+            "answer": 20664,
+            "candidate": 201,
+            "answer_feedback": "This is a good liberal answer that will convince people of your merits this election season, and remind people of just how much of a disaster Trump has been."
+        }
     }
 ]
+cyoAdventure = function(a) {
+ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1]
+if (ans == 5002) {
+campaignTrail_temp.candidate_image_url = "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mike_Gravel.png"
+campaignTrail_temp.candidate_last_name = 'Gravel'
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.first_name = "Gravel"
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.last_name = "For President"
+campaignTrail_temp.running_mate_image_url = "https://rlv.zcache.com/mike_gravel_2020_button-r9dcd72d0b43b4106a2927e4218a0dcc4_k94rf_630.jpg?rlvnet=1&view_padding=%5B285%2C0%2C285%2C0%5D"
+campaignTrail_temp.running_mate_last_name = 'For President'
+
+
+
+
+}
+
+}
 
 
 
 campaignTrail_temp.jet_data = [{}
 ]
+campaignTrail_temp.candidate_image_url = 'https://www.disneydining.com/wp-content/uploads/2022/04/Bob-Iger-Variety-Cover-Story-5-FULL.webp';
+campaignTrail_temp.running_mate_image_url = 'https://www.cleveland.com/resizer/v2/https%3A%2F%2Farc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com%2Fpublic%2F7SFNJLGQTJE2RL23TDTKEIG7GI.png?auth=fc1a2a9d2cf69241be2f0f5ebe10218a0777ff51cb319e8400fd63ef2409a2cb&width=500&quality=90';
+campaignTrail_temp.candidate_last_name = 'Iger';
+campaignTrail_temp.running_mate_last_name = 'For President';
+campaignTrail_temp.player_answers = [];
+campaignTrail_temp.player_visits = [];
+campaignTrail_temp.answer_feedback_flg = 1;
 
