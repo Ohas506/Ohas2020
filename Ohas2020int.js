@@ -10,21 +10,23 @@ campaignTrail_temp.credits = "<button onclick='funcredits()'>Ohas</button>";
     }
     alert(text)
   }
-  let z = new MutationObserver((mutationsList, observer) => {
-    let runningMateSummary = document.querySelector("#running_mate_summary");
-    if (runningMateSummary) {
-        $("#running_mate_id_button").click();
-        observer.disconnect()
-    }
-  });
 e = campaignTrail_temp;
 
 
-            nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#a6a0a0";
-            styling.innerHTML = `
+ nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#a6a0a0";
+styling.innerHTML = `
 #opponent_selection_id_back {
     display: none;
 }`
+let z = new MutationObserver((mutationsList, observer) => {
+  let runningMateSummary = document.querySelector("#running_mate_summary");
+  if (runningMateSummary) {
+      $("#running_mate_id_button").click();
+      observer.disconnect()
+  }
+});
+
+
 quotes = ["““The people must be brought into the operation of government, to make the laws that affect their lives, and thereby become the fourth check in our government’s system of checks and balances.” -- Mike Gravel", ]
 customquote = quotes[Math.floor((Math.random() * quotes.length))]
 
@@ -32,7 +34,8 @@ corrr=`\n<h2>2020</h2><font id='wittyquote' size='2' color='white'><i><em>`+cust
             nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#6bc6ff";
 
             document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
-
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundSize = "cover";
             $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
 
             $(".container")[0].style.backgroundColor = "#434242";
