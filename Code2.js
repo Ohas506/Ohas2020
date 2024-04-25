@@ -1,3 +1,4 @@
+campaignTrail_temp.cyoa = true;
 campaignTrail_temp.questions_json = [
     {
         "model": "campaign_trail.question",
@@ -9219,21 +9220,19 @@ campaignTrail_temp.answer_feedback_json = [
 ]
 cyoAdventure = function(a) {
 ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1]
-if (ans == 5002) {
+if (campaignTrail_temp.player_answers == 5002) {
 campaignTrail_temp.candidate_image_url = "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mike_Gravel.png"
 campaignTrail_temp.candidate_last_name = 'Gravel'
-campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.first_name = "Gravel"
-campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.last_name = "For President"
 campaignTrail_temp.running_mate_image_url = "https://rlv.zcache.com/mike_gravel_2020_button-r9dcd72d0b43b4106a2927e4218a0dcc4_k94rf_630.jpg?rlvnet=1&view_padding=%5B285%2C0%2C285%2C0%5D"
 campaignTrail_temp.running_mate_last_name = 'For President'
-
-
-
-
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.first_name = "Gravel"
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.last_name = "For President"
+campaignTrail_temp.running_mate_state_id = '426';
+campaignTrail_temp.player_answers = [];
+campaignTrail_temp.player_visits = [];
+campaignTrail_temp.answer_feedback_flg = 1;
 }
-
 }
-
 
 
 campaignTrail_temp.jet_data = [{}
