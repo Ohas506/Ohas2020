@@ -11,7 +11,7 @@ campaignTrail_temp.questions_json = [
     },
     {
         "model": "campaign_trail.question",
-        "pk": 1007,
+        "pk": 9999,
         "fields": {
             "priority": 2,
             "description": "There was a mass shooting at a gay nightclub in Orlando overnight, perpetrated by a Muslim, resulting in 50 people killed. What is your reaction?",
@@ -20,7 +20,7 @@ campaignTrail_temp.questions_json = [
     },
     {
         "model": "campaign_trail.question",
-        "pk": 1006,
+        "pk": 10000,
         "fields": {
             "priority": 2,
             "description": "The FBI director has handed down a severe criticism of Clinton's email practices while Secretary of State, though he declined to recommend any indictments. Do you have any comment?",
@@ -7163,9 +7163,9 @@ campaignTrail_temp.answer_score_global_json = [
         "pk": 3248,
         "fields": {
             "answer": 5004,
-            "candidate": 200,
-            "affected_candidate": 200,
-            "global_multiplier": 0.05
+            "candidate": 201,
+            "affected_candidate": 201,
+            "global_multiplier": -50
         }
     },
     {
@@ -7298,7 +7298,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 20666,
             "candidate": 200,
             "affected_candidate": 200,
-            "global_multiplier": 0.05
+            "global_multiplier": 0.5
         }
     }
 ]
@@ -9272,6 +9272,7 @@ campaignTrail_temp.jet_data = [{}
 ]
 cyoAdventure = function(a) {
 ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1]
+
 function tunnel(new_q){
         e = campaignTrail_temp;
         return e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
@@ -9342,6 +9343,7 @@ campaignTrail_temp.candidate_json[2]["fields"].color_hex = "#6067A6";
 campaignTrail_temp.candidate_json[2]["fields"].first_name = "Michael";
 campaignTrail_temp.candidate_json[2]["fields"].last_name = "Bennet";
 campaignTrail_temp.candidate_json[2]["fields"].color_hex = "#6b8fe3";
+campaignTrail_temp.candidate_json[3]["fields"].color_hex = "#FFFF00";
 campaignTrail_temp.candidate_json[1]["fields"].color_hex = "#FF0000";
 campaignTrail_temp.candidate_json[1]["fields"].image_url = "https://static01.nyt.com/images/2022/12/16/multimedia/16ireland-kennedy-1-1-f0af/16ireland-kennedy-1-1-f0af-mediumSquareAt3X.jpg";
 campaignTrail_temp.running_mate_image_url = "https://ih1.redbubble.net/image.1341888289.9124/raf,750x1000,075,t,101010:01c5ca27c6.jpg"
@@ -9357,11 +9359,12 @@ campaignTrail_temp.questions_json[10] = {
         }
     
 }
+if (ans == 5004) {
+campaignTrail_temp.question_number=24
+campaignTrail_temp.candidate_json[0]["fields"].first_name = "Howie";
+campaignTrail_temp.candidate_json[0]["fields"].last_name = "Hawkins";  
 }
-
-
-
-
+}
 campaignTrail_temp.jet_data = [{}
 ]
 campaignTrail_temp.candidate_image_url = 'https://www.disneydining.com/wp-content/uploads/2022/04/Bob-Iger-Variety-Cover-Story-5-FULL.webp';
@@ -9371,4 +9374,29 @@ campaignTrail_temp.running_mate_last_name = 'For President';
 campaignTrail_temp.player_answers = [];
 campaignTrail_temp.player_visits = [];
 campaignTrail_temp.answer_feedback_flg = 1;
+
+endingPicker = (out, totv, aa, quickstats) => {
+if (campaignTrail_temp.player_answers == 5004) {
+
+if (used != true) {
+    setInterval(function () {
+        used = true;
+        imgg = document.getElementsByClassName("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Jesse_Ventura_%2853514439524%29_%28cropped%29.jpg/330px-Jesse_Ventura_%2853514439524%29_%28cropped%29.jpg")[0];
+        if (imgg != null) {
+            imgg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Jesse_Ventura_%2853514439524%29_%28cropped%29.jpg/330px-Jesse_Ventura_%2853514439524%29_%28cropped%29.jpg";
+        }
+    }, 100);
+}
+}
+
+campaignTrail_temp.multiple_endings=true
+// to here!
+return "<h3>An Interview with Jesse Ventura</h3><p><i>Tonight on ABC news, we will be interviewing former Reform Party Governer of Minnestoa, Jesse Ventura about his take on the 2020 electoral season</i><br><br><i> So you are saying that if you were on the ballot in all fifty states you could beat both Biden and Trump?</i><br><br><i>Yes I am</i><br></i>Does that not strike you as a bit overambitous?</i><br><i>No not at all, I mean Trump and Biden, they both lie about various different things to the American people,I think Americans want someone like me, someone who will tell them the truth about 9/11, the Iraq War, Covid 19</i><br><i>You were offered the Green Parties nomination,why did you decline it then, if you say you could have won</i><br><i>Well look I was in profesional wrestling, and that ended with a blod clot. I dont want have that happen again, and have nowhere to turn. I would have lost my insurance if I had accepted the nomination</i><i>I suppose then that you-SOMEONE CALL AN AMBULANCE, MR VENTURAS ON THE GROUND</i></p>";
+}
+
+
+
+
+
+
 
