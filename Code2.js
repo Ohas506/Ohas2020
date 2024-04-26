@@ -29,7 +29,7 @@ campaignTrail_temp.questions_json = [
     },
     {
         "model": "campaign_trail.question",
-        "pk": 1001,
+        "pk": 7890,
         "fields": {
             "priority": 3,
             "description": "What was your rationale behind selecting Mike Pence as your running mate?",
@@ -9332,13 +9332,6 @@ if (ans == 5014) {
     campaignTrail_temp.running_mate_last_name = 'For President'
     
 }
-
-
-
-
-
-
-
 if (ans == 5015) {
 campaignTrail_temp.candidate_image_url = "https://upload.wikimedia.org/wikipedia/commons/e/e4/JesseVentura1.jpg"
 campaignTrail_temp.candidate_last_name = 'Ventura'
