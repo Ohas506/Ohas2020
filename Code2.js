@@ -35,7 +35,7 @@ campaignTrail_temp.questions_json = [
             "description": "What was your rationale behind selecting Mike Pence as your running mate?",
             "likelihood": 1
         }
-    },
+    },    
     {
         "model": "campaign_trail.question",
         "pk": 1019,
@@ -224,7 +224,27 @@ campaignTrail_temp.questions_json = [
             "description": "Where will you spend the final day of your campaign?",
             "likelihood": 1
         }
-    }
+    },
+    {
+        "model": "campaign_trail.question",
+            "pk": 1001,
+            "fields": {
+                "priority": 3,
+                "description": "A few months ago you announced your candidacy for president under the Green Party, but then decided to suspend it some time later after you realized running for president would mean losing your work provided health insurance, given that you are surprised to hear that the Green Party has confirmed you as their nominee for president! Hoping that the split in the Democratic Party and subsequent progressive walkout represents their bigshot to finally claim victory over the two party duopoly, the party has nominated you, with the hopes that your name recognition is the cherry on top, needed to push them over the finish line. How will you proceed receiving the news?",
+                "likelihood": 1
+            }
+
+
+    },
+    {
+        "model": "campaign_trail.question",
+        "pk": 1006,
+        "fields": {
+            "priority": 2,
+            "description": "In a shocking turn of events, on the tenth ballot of the Democratic National Convention,with a slim majority of the delegate count, you have been nominated for president! You had only entered the race to push the party father to the left, and only stayed in it past the first debate as a protest candidate against Iger. Now with Iger's controversial speech drawing widespread criticism from everyone within the party, you have been nominated! How will you proceed receiving this news?\n",
+            "likelihood": 1
+        }
+    },
 ]
 
 campaignTrail_temp.answers_json = [
@@ -257,7 +277,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5003,
         "fields": {
             "question": 1001,
-            "description": "Mike Pence is an incredible, incredible human being. He's been in there for many years, fighting for religious liberty, tax cuts, and a strong military."
+            "description": "Well you've got to crack some eggs to make an omelet, and I suppose if I have to sacrifice my health insurance to run for president, so be it! I accept this nomination with open arms!"
         }
     },
     {
@@ -265,7 +285,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5004,
         "fields": {
             "question": 1001,
-            "description": "This is a guy with a terrific record in state government, really terrific as Governor of Indiana. A wonderful Congressman you might have heard. And we need experience. Experience is very important."
+            "description": "Look, my decision to not seek the nomination before was final. I refuse this nomination, I need my health insurance.\n"
         }
     },
     {
@@ -273,7 +293,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5013,
         "fields": {
             "question": 1006,
-            "description": "This investigation by our so-called FBI was a farce from start to finish. How can someone destroy massive amounts of evidence in the midst of a federal investigation and not be charged?"
+            "description": "Well…….I never expected to get this far but I must listen to the will of the delegates. I may be old, but I am willing to push this party to accept the positions that will finally beat Donald Trump, and summent a truly progressive ruling order, one the nation has never seen before!\n"
         }
     },
     {
@@ -281,7 +301,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5014,
         "fields": {
             "question": 1006,
-            "description": "I'm deeply concerned about this whole episode. We don't know yet whether there was a crime or not, but you can be sure that a Trump Administration will be looking into this some more."
+            "description": "Throughout my life, I have always done what I believe was the best for the country, and right now I am not the best man that this party can put forward. With this knowledge, I can not accept this nomination.\n"
         }
     },
     {
@@ -289,7 +309,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5015,
         "fields": {
             "question": 1006,
-            "description": "I have the utmost respect for James Comey and our terrific agents in the FBI. It seems like Hillary may have gotten lucky on this one."
+            "description": "Donald Trump is the worst candidate in the history of this country, and in order to beat him, I need to pivot. Il give a speech committing myself to the moderate wing of the Democratic party.\n"
         }
     },
     {
@@ -898,6 +918,14 @@ campaignTrail_temp.answers_json = [
         "fields": {
             "question": 1000,
             "description": "I will give a speech stressing the need for Unity this election season, il mention that Trump has been a disaster for are very democracy, and we must beat him at all costs"
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 20666,
+        "fields": {
+            "question": 1001,
+            "description": "The party platform of the Green Party is one of extreme moderation, these progressives, Democratic Socialists, and Greens are just liberals in disguise. There's only one party to turn to now……… \n"
         }
     }
 ]
@@ -6317,7 +6345,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 5002,
             "candidate": 201,
             "affected_candidate": 201,
-            "global_multiplier": -3
+            "global_multiplier": -0.056
         }
     },
     {
@@ -6327,7 +6355,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 5003,
             "candidate": 200,
             "affected_candidate": 200,
-            "global_multiplier": 0.006
+            "global_multiplier": 0.03
         }
     },
     {
@@ -6336,8 +6364,8 @@ campaignTrail_temp.answer_score_global_json = [
         "fields": {
             "answer": 5013,
             "candidate": 200,
-            "affected_candidate": 200,
-            "global_multiplier": 0.0015
+            "affected_candidate": 201,
+            "global_multiplier": 0.02
         }
     },
     {
@@ -6345,9 +6373,9 @@ campaignTrail_temp.answer_score_global_json = [
         "pk": 3009,
         "fields": {
             "answer": 5014,
-            "candidate": 200,
-            "affected_candidate": 200,
-            "global_multiplier": 0.0025
+            "candidate": 201,
+            "affected_candidate": 201,
+            "global_multiplier": 0.03
         }
     },
     {
@@ -7136,8 +7164,8 @@ campaignTrail_temp.answer_score_global_json = [
         "fields": {
             "answer": 5004,
             "candidate": 200,
-            "affected_candidate": 202,
-            "global_multiplier": -0.005
+            "affected_candidate": 200,
+            "global_multiplier": 0.05
         }
     },
     {
@@ -7145,29 +7173,32 @@ campaignTrail_temp.answer_score_global_json = [
         "pk": 3265,
         "fields": {
             "answer": 5015,
-            "candidate": 200,
-            "affected_candidate": 200,
-            "global_multiplier": -0.003
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_global",
-        "pk": 3266,
-        "fields": {
-            "answer": 5015,
-            "candidate": 200,
+            "candidate": 201,
             "affected_candidate": 201,
-            "global_multiplier": 0.001
+            "global_multiplier": -0.086,
+        
         }
     },
     {
         "model": "campaign_trail.answer_score_global",
-        "pk": 3267,
+        "pk": 5268,
         "fields": {
             "answer": 5015,
-            "candidate": 200,
+            "candidate": 201,
             "affected_candidate": 202,
-            "global_multiplier": -0.005
+            "global_multiplier": 5,
+        
+        }
+    },
+    {
+        "model": "campaign_trail.answer_score_global",
+        "pk": 5688,
+        "fields": {
+            "answer": 5015,
+            "candidate": 201,
+            "affected_candidate": 200,
+            "global_multiplier": 0.045,
+        
         }
     },
     {
@@ -7258,6 +7289,16 @@ campaignTrail_temp.answer_score_global_json = [
             "candidate": 200,
             "affected_candidate": 202,
             "global_multiplier": -0.025
+        }
+    },
+    {
+        "model": "campaign_trail.answer_score_global",
+        "pk": 20668,
+        "fields": {
+            "answer": 20666,
+            "candidate": 200,
+            "affected_candidate": 200,
+            "global_multiplier": 0.05
         }
     }
 ]
@@ -8556,8 +8597,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2503,
         "fields": {
             "answer": 5003,
-            "candidate": 200,
-            "answer_feedback": "People note your emphasis of Pence's strong conservative credentials."
+            "candidate": 201,
+            "answer_feedback": "You're nominated without much eternal party resistance, although there are some murmurs about whether the party should be nominating a man who's been out of politics for twenty years."
         }
     },
     {
@@ -8565,8 +8606,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2504,
         "fields": {
             "answer": 5004,
-            "candidate": 200,
-            "answer_feedback": "Pundits note your emphasis of Pence's experience and credentials."
+            "candidate": 201,
+            "answer_feedback": "You sure do"
         }
     },
     {
@@ -8574,8 +8615,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2513,
         "fields": {
             "answer": 5013,
-            "candidate": 200,
-            "answer_feedback": "It might not be a bad idea to keep hammering away at Hillary. It could help you to make this a contest of who is more unpopular."
+            "candidate": 201,
+            "answer_feedback": "Many people are …...less than thrilled to hear that an eighty nine year old man will be the face of the Democratic Party, but many young people are wowed by your progressive credentials, so it might make up for the outflow of many more moderate Democrats from your campaign.\n"
         }
     },
     {
@@ -8583,8 +8624,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2514,
         "fields": {
             "answer": 5014,
-            "candidate": 200,
-            "answer_feedback": "It might not be a bad idea to keep hammering away at Hillary. It could help you to make this a contest of who is more unpopular."
+            "candidate": 201,
+            "answer_feedback": "Chaos breaks out at the DNC as the scramble to find a new candidate ensues. After several backroom deals, on the tenth ballot a unity candidate is finally confirmed"
         }
     },
     {
@@ -8592,8 +8633,8 @@ campaignTrail_temp.answer_feedback_json = [
         "pk": 2515,
         "fields": {
             "answer": 5015,
-            "candidate": 200,
-            "answer_feedback": "Some think you are too restained on this issue, if that's easy to believe."
+            "candidate": 201,
+            "answer_feedback": "This goes over terribly with your longtime supporters, as many progressive’s and Democratic Socialists denounce you as a traitor for betraying the cause, subsequently they stage a walkout of the party, joining forces with the Green Party, on the flip side the people who you attempted to court find your speech disingenuous and with the progressive walkout they ditch you , instead nominating Michael Bennet. The newly enlarged Green Party convenes a few days later, to confirm their nominee for president. "
         }
     },
     {
@@ -9218,23 +9259,130 @@ campaignTrail_temp.answer_feedback_json = [
         }
     }
 ]
+
+
+
+campaignTrail_temp.jet_data = [{}
+]
+
+
+
+
+campaignTrail_temp.jet_data = [{}
+]
+
+
+
+
+
+campaignTrail_temp.jet_data = [{}
+]
 cyoAdventure = function(a) {
+    function tunnel(new_q){
+        e = campaignTrail_temp;
+        return e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
+    }
+    
+    getQuestionFromPk = function(pk) {
+      let index = questionSheath.map(f=>f.pk).indexOf(pk)
+      if (index < 0) {
+        return false
+      }
+      return questionSheath[index]
+    }
+    getQuestionFromLabel = function(label) {
+      let index = questionSheath.map(f=>f.label).indexOf(label)
+      if (index < 0) {
+        return false
+      }
+      return questionSheath[index]
+    }
+    
 ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1]
 if (campaignTrail_temp.player_answers == 5002) {
 campaignTrail_temp.candidate_image_url = "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mike_Gravel.png"
 campaignTrail_temp.candidate_last_name = 'Gravel'
+<<<<<<< HEAD
+campaignTrail_temp.candidate_json[0]["fields"].color_hex = "#7393B3";
+campaignTrail_temp.candidate_json[0]["fields"].first_name = "Mike";
+campaignTrail_temp.candidate_json[0]["fields"].last_name = "Gravel";
+campaignTrail_temp.candidate_json[1]["fields"].color_hex = "#FF0000";
+campaignTrail_temp.candidate_json[0]["fields"].image_url = "https://upload.wikimedia.org/wikipedia/commons/1/1d/Mike_Gravel.png";
+campaignTrail_temp.running_mate_image_url = "https://media.licdn.com/dms/image/C4D0BAQE9XVcMYoy7Mg/company-logo_200_200/0/1630462270000?e=2147483647&v=beta&t=ydflltrDbv64Kd7-abrRZ0uIzIUHV_pYPnhNXKaslmM"
+=======
 campaignTrail_temp.running_mate_image_url = "https://rlv.zcache.com/mike_gravel_2020_button-r9dcd72d0b43b4106a2927e4218a0dcc4_k94rf_630.jpg?rlvnet=1&view_padding=%5B285%2C0%2C285%2C0%5D"
+>>>>>>> d6e5962bb0afd277fc04787b6927d8302afb5503
 campaignTrail_temp.running_mate_last_name = 'For President'
+<<<<<<< HEAD
+campaignTrail_temp.questions_json[9] = {
+
+    "model": "campaign_trail.question",
+    "pk": 1006,
+    "fields": {
+        "priority": 1,
+        "description": "In a shocking turn of events, on the tenth ballot of the Democratic National Convention,with a slim majority of the delegate count, you have been nominated for president! You had only entered the race to push the party father to the left, and only stayed in it past the first debate as a protest candidate against Iger. Now with Iger's controversial speech drawing widespread criticism from everyone within the party, you have been nominated! How will you proceed receiving this news?\n",
+        "likelihood": 1
+    }
+}
+}
+if(ans == 5002){campaignTrail_temp.questions_json[campaignTrail_temp.question_number + 1] = tunnel(1006);
+}
+if(ans == 5015){campaignTrail_temp.questions_json[campaignTrail_temp.question_number + 1] = tunnel(1001);
+}
+
+
+if (ans == 5014) {
+    campaignTrail_temp.candidate_image_url = "https://static01.nyt.com/images/2022/12/16/multimedia/16ireland-kennedy-1-1-f0af/16ireland-kennedy-1-1-f0af-mediumSquareAt3X.jpg"
+    campaignTrail_temp.candidate_last_name = 'Kennedy'
+    campaignTrail_temp.candidate_json[0]["fields"].color_hex = "#6067A6";
+    campaignTrail_temp.candidate_json[0]["fields"].first_name = "Joe";
+    campaignTrail_temp.candidate_json[0]["fields"].last_name = "Kennedy III";
+    campaignTrail_temp.candidate_json[1]["fields"].color_hex = "#FF0000";
+    campaignTrail_temp.candidate_json[1]["fields"].image_url = "https://static01.nyt.com/images/2022/12/16/multimedia/16ireland-kennedy-1-1-f0af/16ireland-kennedy-1-1-f0af-mediumSquareAt3X.jpg";
+    campaignTrail_temp.running_mate_image_url = "https://m.media-amazon.com/images/I/71ZwOq4w+xL.jpg"
+    campaignTrail_temp.running_mate_last_name = 'For President'
+    }
+if (ans == 5015) {
+campaignTrail_temp.candidate_image_url = "https://upload.wikimedia.org/wikipedia/commons/e/e4/JesseVentura1.jpg"
+campaignTrail_temp.candidate_last_name = 'Ventura'
+campaignTrail_temp.candidate_json[0]["fields"].color_hex = "#6be36b";
+campaignTrail_temp.candidate_json[0]["fields"].first_name = "Jesse";
+campaignTrail_temp.candidate_json[0]["fields"].last_name = "Ventura";
+campaignTrail_temp.candidate_json[2]["fields"].color_hex = "#6067A6";
+campaignTrail_temp.candidate_json[2]["fields"].first_name = "Michael";
+campaignTrail_temp.candidate_json[2]["fields"].last_name = "Bennet";
+campaignTrail_temp.candidate_json[2]["fields"].color_hex = "#6b8fe3";
+campaignTrail_temp.candidate_json[1]["fields"].color_hex = "#FF0000";
+campaignTrail_temp.candidate_json[1]["fields"].image_url = "https://static01.nyt.com/images/2022/12/16/multimedia/16ireland-kennedy-1-1-f0af/16ireland-kennedy-1-1-f0af-mediumSquareAt3X.jpg";
+campaignTrail_temp.running_mate_image_url = "https://ih1.redbubble.net/image.1341888289.9124/raf,750x1000,075,t,101010:01c5ca27c6.jpg"
+campaignTrail_temp.running_mate_last_name = 'For President'
+campaignTrail_temp.questions_json[10] = {
+"model": "campaign_trail.question",
+            "pk": 1001,
+            "fields": {
+                "priority": 3,
+                "description": "A few months ago you announced your candidacy for president under the Green Party, but then decided to suspend it some time later after you realized running for president would mean losing your work provided health insurance, given that you are surprised to hear that the Green Party has confirmed you as their nominee for president! Hoping that the split in the Democratic Party and subsequent progressive walkout represents their bigshot to finally claim victory over the two party duopoly, the party has nominated you, with the hopes that your name recognition is the cherry on top, needed to push them over the finish line. How will you proceed receiving the news?",
+                "likelihood": 1
+            }
+        }
+    
+=======
 campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.first_name = "Gravel"
 campaignTrail_temp.candidate_json.find(candidate => candidate.pk ==pk_of_player).fields.last_name = "For President"
 campaignTrail_temp.running_mate_state_id = '426';
 campaignTrail_temp.player_answers = [];
 campaignTrail_temp.player_visits = [];
 campaignTrail_temp.answer_feedback_flg = 1;
+>>>>>>> d6e5962bb0afd277fc04787b6927d8302afb5503
 }
 }
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> d6e5962bb0afd277fc04787b6927d8302afb5503
 campaignTrail_temp.jet_data = [{}
 ]
 campaignTrail_temp.candidate_image_url = 'https://www.disneydining.com/wp-content/uploads/2022/04/Bob-Iger-Variety-Cover-Story-5-FULL.webp';
