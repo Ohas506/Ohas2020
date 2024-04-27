@@ -9267,7 +9267,387 @@ var McAfeeCrimesMap = {
 
 
   }
+  var newMail = false;
+  // Mail class to represent each mail instance
+  class Mail {
+      constructor(id, sender, message) {
+          this.id = id
+          this.sender = sender;
+          this.message = message;
+          newMail = true;
+      }
+  }
+  
+  class Recipient {
+      constructor(id, name, prewrittenMessage, sent) {
+          this.id = id;
+          this.name = name;
+          this.sent = sent;
+      }
+  }
+  
+  var mailSentTo = []
+  
+  // To add a mail to the mailbox, use mailbox.mails.push(new Mail(1, "Thomas Jefferson", "Hi there!"))
+  //similar for recipients: mailbox.recipients.push(new Recipient (1, "George Washington", false))
+  let mailbox = {
+      mails: [
+         ],
+   recipients: [
+          new Recipient(1, "Abigail Adams", false),
+       
+      ]
+  };
+  
+  // Function to add Mailbox button
+  function openMailbox() {
+      newMail = false;
+      document.getElementById('mailbox_button').innerHTML = 'Your Study';
+      let questions = document.querySelector(".inner_window_question");
+      questions.style.display = 'none';
+  
+      let mbDiv = document.createElement('div');
+      mbDiv.id = 'mailbox';
+      mbDiv.style.height='100%'
+      setupMainArea(mbDiv, questions); // Setup the dynamic image area
+  
+      questions.parentNode.insertBefore(mbDiv, questions.nextSibling);
+  }
+  
+  function setupMainArea(parentDiv, toggleDiv) {
+      let headerDiv = createHeader(parentDiv, toggleDiv);
+      parentDiv.appendChild(headerDiv);
+  
+      let containerDiv = document.createElement('div');
+      containerDiv.style.position = 'relative';
+      containerDiv.style.height = '80%'; // Set the height of the container
+      parentDiv.appendChild(containerDiv);
+  
+      let image = document.createElement('img');
+      image.style.width = '100%';
+      image.style.height = '100%';
+      image.style.display = 'block'; // Ensure the image fills the container
+      containerDiv.appendChild(image);
+  
+      // Check the number of mails and set the image source accordingly
+      let mailCount = mailbox.mails.length;
+      if (mailCount === 0) {
+          image.src = 'https://i.ibb.co/DzvGPfB/No-Letters-Quill.png';
+      } else if (mailCount >= 1 && mailCount <= 1) {
+          image.src = 'https://i.ibb.co/6gPN0Nf/Letter-Quill.png';
+      } else if (mailCount >= 2 && mailCount <= 4) {
+          image.src = 'https://i.ibb.co/wMPnNLH/Some-Letters-Quill.png';
+      } else {
+          image.src = 'https://i.ibb.co/1vZGczN/Many-Letters-Quill.png';
+      }
+      createInteractiveArea(containerDiv, 61.56, 15.47, 32.88, 73.49, showWriteLetterOverlay);
+      createInteractiveArea(containerDiv, 3.5, 19.06, 54.19, 73.11, showReceivedLettersOverlay);
+  }
+  
+  function createInteractiveArea(container, left, top, width, height, clickCallback) {
+      let areaDiv = document.createElement('div');
+      areaDiv.style.position = 'absolute';
+      areaDiv.style.left = left + '%';
+      areaDiv.style.top = top + '%';
+      areaDiv.style.width = width + '%';
+      areaDiv.style.height = height + '%';
+      areaDiv.style.cursor = 'pointer';
+      areaDiv.style.backgroundColor = 'rgba(255, 255, 255, 0)'; // Initially transparent
+      areaDiv.style.transition = 'background-color 0.3s';
+  
+      areaDiv.addEventListener('mouseenter', () => areaDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'); // Transparent white on hover
+      areaDiv.addEventListener('mouseleave', () => areaDiv.style.backgroundColor = 'rgba(255, 255, 255, 0)'); // Revert to transparent when not hovered
+      areaDiv.addEventListener('click', clickCallback);
+  
+      container.appendChild(areaDiv);
+  }
+  
+  
+  // Create a header with back button and title
+  function createHeader(parentDiv, toggleDiv) {
+      let headerDiv = document.createElement('div');
+      headerDiv.style.display = 'flex';
+      headerDiv.style.justifyContent = 'space-between';
+      headerDiv.style.alignItems = 'center';
+      headerDiv.appendChild(createBackButton(parentDiv, toggleDiv));
+      headerDiv.appendChild(createHeaderText('Your Study'));
+      return headerDiv;
+  }
+  
+  function createBackButton(parentDiv, toggleDiv) {
+      let backButton = document.createElement('button');
+      backButton.innerText = 'Back';
+      backButton.style.margin = '5px';
+      backButton.style.backgroundColor = 'grey';
+      backButton.onclick = function() {
+          parentDiv.remove();
+          toggleDiv.style.display = '';
+      };
+      return backButton;
+  }
+  
+  function createHeaderText(text) {
+      let headerText = document.createElement('h2');
+      headerText.textContent = text;
+      headerText.style.flexGrow = 1;
+      headerText.style.textAlign = 'center';
+      return headerText;
+  }
+  
+  // Function to show overlay with received letters
+  function showReceivedLettersOverlay() {
+      let overlay = createOverlay();
+  
+      // Container for letters
+      let lettersContainer = document.createElement('div');
+      lettersContainer.style.padding = '10px';
+      lettersContainer.style.maxWidth = '300px';
+      lettersContainer.style.backgroundImage = "url('https://t3.ftcdn.net/jpg/00/47/71/42/360_F_47714212_N5Pn5FA4YCIWxBrXHJjwL8e1FhoxVU0i.jpg')";
+      lettersContainer.style.backgroundSize = 'cover';
+      lettersContainer.style.borderRadius = '5px';
+      lettersContainer.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+      lettersContainer.style.overflowY = 'auto';
+      lettersContainer.style.maxHeight = '400px';
+  
+      // List out received letters
+      mailbox.mails.forEach((mail, index) => {
+          let letterItem = document.createElement('div');
+          letterItem.innerText = `From: ${mail.sender}`;
+          letterItem.style.padding = '10px';
+          letterItem.style.margin = '5px 0';
+          letterItem.style.backgroundImage = "url('https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg')";
+          letterItem.style.backgroundSize = 'cover'; // Changed from 'contain' to 'cover'
+          letterItem.style.backgroundPosition = 'center';
+          letterItem.style.border = '1px solid #ddd';
+          letterItem.style.borderRadius = '5px';
+          letterItem.style.cursor = 'pointer';
+          letterItem.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+          letterItem.style.color = 'black'; // Ensure text is readable on the letter background
+  
+          // Hover effect
+          letterItem.onmouseover = function() {
+              this.style.opacity = '0.8';
+          };
+          letterItem.onmouseout = function() {
+              this.style.opacity = '1';
+          };
+  
+          letterItem.onclick = () => openMailContent(mail, index);
+          lettersContainer.appendChild(letterItem);
+      });
+  
+      // Close button
+      let closeButton = document.createElement('button');
+      closeButton.innerText = 'Close';
+      closeButton.style.display = 'block';
+      closeButton.style.margin = '10px auto';
+      closeButton.style.padding = '5px 10px';
+      closeButton.style.backgroundColor = '#ddd';
+      closeButton.style.border = 'none';
+      closeButton.style.borderRadius = '5px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.onclick = () => overlay.remove();
+  
+      // Append the close button to the lettersContainer
+      lettersContainer.appendChild(closeButton);
+  
+      overlay.appendChild(lettersContainer);
+      document.body.appendChild(overlay);
+  }
+  
+  
+  // Utility function to create a generic overlay
+  function createOverlay() {
+      let overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      overlay.style.zIndex = '1000';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      return overlay;
+  }
+  
+  // Function to open and display the content of a mail
+  function openMailContent(mail, index) {
+      let mailContentOverlay = createOverlay();
+  
+      // Container for the mail content
+      let mailContentContainer = document.createElement('div');
+      mailContentContainer.style.padding = '20px';
+      mailContentContainer.style.backgroundImage = "url('https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg')";
+      mailContentContainer.style.backgroundSize = 'cover';
+      mailContentContainer.style.borderRadius = '5px';
+      mailContentContainer.style.maxWidth = '500px';
+      mailContentContainer.style.textAlign = 'left';
+  
+      // Sender's name
+      let senderName = document.createElement('h3');
+      senderName.innerText = `From: ${mail.sender}`;
+      senderName.style.marginBottom = '10px';
+  
+      // Mail message
+      let mailMessage = document.createElement('p');
+      mailMessage.innerText = mail.message;
+      mailMessage.style.whiteSpace = 'pre-wrap'; // To preserve line breaks and spaces
+  
+      // Close button
+      let closeButton = document.createElement('button');
+      closeButton.innerText = 'Close';
+      closeButton.style.marginTop = '20px';
+      closeButton.style.padding = '5px 10px';
+      closeButton.style.backgroundColor = '#ddd';
+      closeButton.style.border = 'none';
+      closeButton.style.borderRadius = '5px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.onclick = () => mailContentOverlay.remove();
+  
+      // Appending elements to the container
+      mailContentContainer.appendChild(senderName);
+      mailContentContainer.appendChild(mailMessage);
+      mailContentContainer.appendChild(closeButton);
+  
+      // Append the container to the overlay
+      mailContentOverlay.appendChild(mailContentContainer);
+  
+      // Append the overlay to the body
+      document.body.appendChild(mailContentOverlay);
+  }
+  
+  function showWriteLetterOverlay() {
+      let overlay = createOverlay();
+      overlay.classList.add('myoverlay');
+  
+      let writeLetterContainer = document.createElement('div');
+      writeLetterContainer.style.padding = '20px';
+      writeLetterContainer.style.backgroundImage = "url('https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg')";
+      writeLetterContainer.style.backgroundSize = 'cover';
+      writeLetterContainer.style.borderRadius = '5px';
+      writeLetterContainer.style.maxWidth = '500px';
+      writeLetterContainer.style.textAlign = 'left';
+      writeLetterContainer.style.display = 'flex';
+      writeLetterContainer.style.flexDirection = 'column';
+  
+      let recipientLabel = document.createElement('p');
+      recipientLabel.innerHTML = "<strong>Recipient:</strong>";
+      writeLetterContainer.appendChild(recipientLabel);
+  
+      let recipientSelect = document.createElement('select');
+      recipientSelect.style.marginBottom = '10px';
+      recipientSelect.style.backgroundColor = 'transparent'
+  
+      let unsentRecipients = mailbox.recipients.filter(recipient => !recipient.sent);
+  
+      unsentRecipients.forEach(recipient => {
+          let option = document.createElement('option');
+          option.value = recipient.id;
+          option.text = recipient.name;
+          recipientSelect.appendChild(option);
+      });
+  
+      let otherOption = document.createElement('option');
+      otherOption.value = 'other';
+      otherOption.text = 'Other';
+      recipientSelect.appendChild(otherOption);
+  
+      writeLetterContainer.appendChild(recipientSelect);
+  
+      let recipientNameInput = document.createElement('input');
+      recipientNameInput.type = 'text';
+      recipientNameInput.placeholder = 'Enter your recipient here';
+      recipientNameInput.style.marginBottom = '10px';
+      recipientNameInput.style.display = 'none'; // Initially hidden
+      recipientNameInput.style.backgroundColor = 'transparent';
+  
+      recipientSelect.onchange = function() {
+          recipientNameInput.style.display = this.value === 'other' ? 'block' : 'none';
+      };
+  
+      writeLetterContainer.appendChild(recipientNameInput);
+  
+      let messageInput = document.createElement('textarea');
+      messageInput.style.whiteSpace = 'pre-wrap';
+      messageInput.style.marginBottom = '10px';
+      messageInput.style.backgroundColor = 'transparent';
+      messageInput.rows = 12;  // Number of lines
+      messageInput.cols = 60;
+  
+      writeLetterContainer.appendChild(messageInput);
+  
+      let sendButton = document.createElement('button');
+      sendButton.innerText = 'Send';
+      sendButton.style.marginTop = '10px';
+      sendButton.style.padding = '5px 10px';
+      sendButton.style.backgroundColor = '#ddd';
+      sendButton.style.border = 'none';
+      sendButton.style.borderRadius = '5px';
+      sendButton.style.cursor = 'pointer';
+      sendButton.onclick = () => sendMail(recipientSelect.value, recipientNameInput.value || recipientSelect.options[recipientSelect.selectedIndex].text, messageInput.value);
+  
+      writeLetterContainer.appendChild(sendButton);
+  
+      let closeButton = document.createElement('button');
+      closeButton.innerText = 'Close';
+      closeButton.style.marginTop = '10px';
+      closeButton.style.padding = '5px 10px';
+      closeButton.style.backgroundColor = '#ddd';
+      closeButton.style.border = 'none';
+      closeButton.style.borderRadius = '5px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.onclick = () => overlay.remove();
+  
+      writeLetterContainer.appendChild(closeButton);
+  
+      overlay.appendChild(writeLetterContainer);
+      document.body.appendChild(overlay);
+  }
+  
+  
+  function sendMail(recipientId, recipientName, message) {
+      // Add the recipient's name to the mailSentTo array
+      mailSentTo.push(recipientName);
+  
+      // Your logic for sending mail
+      if (recipientId === 'other' || !mailbox.recipients.some(r => r.id == recipientId && r.sent === false)) {
+          alert("Mail sent to " + recipientName);
+          document.querySelector('.myoverlay').remove();
+      } else {
+          let recipient = mailbox.recipients.find(r => r.id == recipientId);
+          recipient.sent = true;
+          alert("Mail sent to " + recipient.name);
+          document.querySelector('.myoverlay').remove();
+      }
+  }
+  
+  
+  
+  // Mutation observer setup
+  let observerRunning = false;
+  let element = document.getElementById('controlElement');
+  if (!element) {
+      let singleObserver = new MutationObserver(handleMutations);
+      singleObserver.observe(document.documentElement, { childList: true, subtree: true });
+      var controlElement = document.createElement('div');
+      controlElement.style.display = 'none';
+      controlElement.id = 'controlElement';
+      document.body.appendChild(controlElement);
+  }
+  
+  function handleMutations(mutationsList, observer) {
+      if (observerRunning) return;
+      observerRunning = true;
+      addMailboxButton();
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      observerRunning = false;
+  }
 
+
+
+  
 campaignTrail_temp.jet_data = [{}
 ]
 cyoAdventure = function(a) {
@@ -9363,6 +9743,27 @@ if (ans == 5004) {
 campaignTrail_temp.question_number=24
 campaignTrail_temp.candidate_json[0]["fields"].first_name = "Howie";
 campaignTrail_temp.candidate_json[0]["fields"].last_name = "Hawkins";  
+}
+
+if (ans == 20666) {
+    function addMailboxButton() {
+        if (document.getElementById('mailbox_button')) {
+            return;
+        }
+    
+        const refButton = document.getElementById('view_electoral_map');
+        if (!refButton) {
+            return;
+        }
+    
+        const newButton = document.createElement('button');
+        newButton.id = 'mailbox_button';
+        newButton.style.marginLeft = '1.5em';
+        newButton.innerHTML = 'Your Study';
+        if (newMail == true) { newButton.innerHTML = '<strong>You have Mail</strong>';}
+        newButton.addEventListener('click', openMailbox);
+        refButton.insertAdjacentElement('afterend', newButton);
+    }
 }
 }
 campaignTrail_temp.jet_data = [{}
