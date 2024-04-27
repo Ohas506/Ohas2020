@@ -9374,10 +9374,10 @@ campaignTrail_temp.running_mate_last_name = 'For President';
 campaignTrail_temp.player_answers = [];
 campaignTrail_temp.player_visits = [];
 campaignTrail_temp.answer_feedback_flg = 1;
-
+campaignTrail_temp.multiple_endings=true
 endingPicker = (out, totv, aa, quickstats) => {
+used=false
 if (campaignTrail_temp.player_answers == 5004) {
-
 if (used != true) {
     setInterval(function () {
         used = true;
@@ -9388,8 +9388,6 @@ if (used != true) {
     }, 100);
 }
 }
-
-campaignTrail_temp.multiple_endings=true
 // to here!
 return "<h3>An Interview with Jesse Ventura</h3><p><i>Tonight on ABC news, we will be interviewing former Reform Party Governer of Minnestoa, Jesse Ventura about his take on the 2020 electoral season</i><br><br><i> So you are saying that if you were on the ballot in all fifty states you could beat both Biden and Trump?</i><br><br><i>Yes I am</i><br></i>Does that not strike you as a bit overambitous?</i><br><i>No not at all, I mean Trump and Biden, they both lie about various different things to the American people,I think Americans want someone like me, someone who will tell them the truth about 9/11, the Iraq War, Covid 19</i><br><i>You were offered the Green Parties nomination,why did you decline it then, if you say you could have won</i><br><i>Well look I was in profesional wrestling, and that ended with a blod clot. I dont want have that happen again, and have nowhere to turn. I would have lost my insurance if I had accepted the nomination</i><i>I suppose then that you-SOMEONE CALL AN AMBULANCE, MR VENTURAS ON THE GROUND</i></p>";
 }
